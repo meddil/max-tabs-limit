@@ -3,9 +3,9 @@
     "name": "Max tabs limit",
     "version": "1.0",
     "description": "Alerts the user when attempting to open a maximum number of tabs (default=10).",
-    "permissions": ["tabs"],
+    "permissions": ["tabs", "storage" ],
     "background": {
-      "service_worker": "limit.js"
+      "service_worker": "test.js"
     },
     "action": {
       "default_popup": "index.html",
