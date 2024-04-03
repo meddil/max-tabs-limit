@@ -10,11 +10,11 @@ chrome.tabs.onCreated.addListener(function(newTab) {
 */
 
 chrome.tabs.onCreated.addListener(function(newTab) {
-  chrome.storage.sync.get(['maxTabs'], function(data) {
-      var maxTabs = parseInt(data.maxTabs);
-      if (!isNaN(maxTabs)) {
+  chrome.storage.sync.get(['tabLimitinput'], function(data) {
+      var tabLimitinput = parseInt(data.tabLimitinput);
+      if (!isNaN(tabLimitinput)) {
           chrome.tabs.query({}, function(tabs) {
-              if (tabs.length > maxTabs) {
+              if (tabs.length > tabLimitinput) {
                   chrome.tabs.remove(newTab.id);
               }
           });
